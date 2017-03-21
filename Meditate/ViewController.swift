@@ -54,6 +54,7 @@ class ViewController: UIViewController {
         meditate(length: 900)
     }
     
+    //Function that plays the sounds at the proper times
     func meditate(length: UInt32) {
         beginSound.play()
         sleep(length)
