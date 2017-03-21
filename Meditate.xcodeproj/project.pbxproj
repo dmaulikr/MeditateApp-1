@@ -12,6 +12,8 @@
 		C5C6BC861E7F5A8E00A15C08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5C6BC841E7F5A8E00A15C08 /* Main.storyboard */; };
 		C5C6BC881E7F5A8E00A15C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5C6BC871E7F5A8E00A15C08 /* Assets.xcassets */; };
 		C5C6BC8B1E7F5A8E00A15C08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5C6BC891E7F5A8E00A15C08 /* LaunchScreen.storyboard */; };
+		C5C6BC931E7F654900A15C08 /* beginSound.aif in Resources */ = {isa = PBXBuildFile; fileRef = C5C6BC921E7F654900A15C08 /* beginSound.aif */; };
+		C5C6BC951E7F689C00A15C08 /* endSound.aif in Resources */ = {isa = PBXBuildFile; fileRef = C5C6BC941E7F689C00A15C08 /* endSound.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		C5C6BC871E7F5A8E00A15C08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5C6BC8A1E7F5A8E00A15C08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5C6BC8C1E7F5A8E00A15C08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5C6BC921E7F654900A15C08 /* beginSound.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = beginSound.aif; sourceTree = "<group>"; };
+		C5C6BC941E7F689C00A15C08 /* endSound.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = endSound.aif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			children = (
 				C5C6BC7F1E7F5A8E00A15C08 /* Meditate */,
 				C5C6BC7E1E7F5A8E00A15C08 /* Products */,
+				C5C6BC971E7F715E00A15C08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +61,21 @@
 			children = (
 				C5C6BC801E7F5A8E00A15C08 /* AppDelegate.swift */,
 				C5C6BC821E7F5A8E00A15C08 /* ViewController.swift */,
+				C5C6BC941E7F689C00A15C08 /* endSound.aif */,
+				C5C6BC921E7F654900A15C08 /* beginSound.aif */,
 				C5C6BC841E7F5A8E00A15C08 /* Main.storyboard */,
 				C5C6BC871E7F5A8E00A15C08 /* Assets.xcassets */,
 				C5C6BC891E7F5A8E00A15C08 /* LaunchScreen.storyboard */,
 				C5C6BC8C1E7F5A8E00A15C08 /* Info.plist */,
 			);
 			path = Meditate;
+			sourceTree = "<group>";
+		};
+		C5C6BC971E7F715E00A15C08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +112,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = H5NB6K469X;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -126,7 +145,9 @@
 			files = (
 				C5C6BC8B1E7F5A8E00A15C08 /* LaunchScreen.storyboard in Resources */,
 				C5C6BC881E7F5A8E00A15C08 /* Assets.xcassets in Resources */,
+				C5C6BC931E7F654900A15C08 /* beginSound.aif in Resources */,
 				C5C6BC861E7F5A8E00A15C08 /* Main.storyboard in Resources */,
+				C5C6BC951E7F689C00A15C08 /* endSound.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
