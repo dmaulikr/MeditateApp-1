@@ -44,7 +44,6 @@
 			children = (
 				C5C6BC7F1E7F5A8E00A15C08 /* Meditate */,
 				C5C6BC7E1E7F5A8E00A15C08 /* Products */,
-				C5C6BC971E7F715E00A15C08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,13 +68,6 @@
 				C5C6BC8C1E7F5A8E00A15C08 /* Info.plist */,
 			);
 			path = Meditate;
-			sourceTree = "<group>";
-		};
-		C5C6BC971E7F715E00A15C08 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +313,7 @@
 				C5C6BC911E7F5A8E00A15C08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
