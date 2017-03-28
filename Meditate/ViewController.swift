@@ -7,30 +7,17 @@
 //
 
 import UIKit
-import AudioToolbox
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    class Sound {
-        var soundEffect: SystemSoundID = 0
-        init(name: String, type: String) {
-            let path  = Bundle.main.path(forResource: name, ofType: type)!
-            let pathURL = NSURL(fileURLWithPath: path)
-            AudioServicesCreateSystemSoundID(pathURL as CFURL, &soundEffect)
-        }
-        func play() {
-            AudioServicesPlaySystemSound(soundEffect)
-        }
     }
     
     //Creating the sounds that will play
