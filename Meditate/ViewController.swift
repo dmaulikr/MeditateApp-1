@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBAction func oneMinuteButton(_ sender: UIButton) {
-        meditate(length: 20)
+        meditate(length: 60)
     }
     
     @IBAction func fiveMinuteButton(_ sender: UIButton) {
