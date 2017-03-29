@@ -26,12 +26,12 @@ class ViewController: UIViewController {
     let beginSound = Sound(name: "beginSound", type: "aif")
     let endSound = Sound(name: "endSound", type: "aif")
     
-    var count: Int = 0
+    var count: Int = -1
     
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBAction func oneMinuteButton(_ sender: UIButton) {
-        meditate(length: 60)
+        meditate(length: 20)
     }
     
     @IBAction func fiveMinuteButton(_ sender: UIButton) {
@@ -49,12 +49,20 @@ class ViewController: UIViewController {
     func updateTimer() {
         if count >= 0 {
             if count == 0 {
-                timerLabel.text = "0:00"
+                timerLabel.text = "00:00"
+                endSound.play()
             }
-            if count % 60 == 0 {
+            if count % 60 == 0 && count / 60 < 10 {
+                timerLabel.text = "0\(count / 60):\(count % 60)0"
+            } else if count % 60 == 0 {
                 timerLabel.text = "\(count / 60):\(count % 60)0"
-            }else {
+            } else if count / 60 < 10 {
+                timerLabel.text = "0\(count / 60):\(count % 60)"
+            } else {
                 timerLabel.text = "\(count / 60):\(count % 60)"
+            }
+            if count < 10 {
+                timerLabel.text = "0\(count / 60):0\(count % 60)"
             }
             count -= 1
         }
@@ -64,8 +72,7 @@ class ViewController: UIViewController {
     func meditate(length: UInt32) {
         count = Int(length)
         beginSound.play()
-        timerLabel.text = "\(length / 60):\(length % 60)0"
+        //timerLabel.text = "\(length / 60):\(length % 60)0"
         updateTimer()
-        endSound.play()
     }
 }
