@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
+        
+        var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +26,9 @@ class ViewController: UIViewController {
     let beginSound = Sound(name: "beginSound", type: "aif")
     let endSound = Sound(name: "endSound", type: "aif")
     
+    var count: Int = 0
+    
+    @IBOutlet weak var timerLabel: UILabel!
     
     @IBAction func oneMinuteButton(_ sender: UIButton) {
         meditate(length: 60)
@@ -41,11 +46,26 @@ class ViewController: UIViewController {
         meditate(length: 900)
     }
     
+    func updateTimer() {
+        if count >= 0 {
+            if count == 0 {
+                timerLabel.text = "0:00"
+            }
+            if count % 60 == 0 {
+                timerLabel.text = "\(count / 60):\(count % 60)0"
+            }else {
+                timerLabel.text = "\(count / 60):\(count % 60)"
+            }
+            count -= 1
+        }
+    }
+    
     //Function that plays the sounds at the proper times
     func meditate(length: UInt32) {
+        count = Int(length)
         beginSound.play()
-        sleep(length)
+        timerLabel.text = "\(length / 60):\(length % 60)0"
+        updateTimer()
         endSound.play()
     }
 }
-
