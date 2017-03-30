@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     //Create an instance of the view controller to run the meditate function
-    //You probably aren'r supposed to do this
-    var meditate = ViewController()
+    //You probably aren't supposed to do this
+    let meditate = ViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -68,7 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      performActionFor shortcutItem: UIApplicationShortcutItem,
                      completionHandler: @escaping (Bool) -> Void) {
         var didHandle: Bool = false
-        print(shortcutItem.type)
         switch(shortcutItem.type) {
         case "com.learning.trent.Meditate.OneMinute":
             meditate.meditate(length: 60)
@@ -82,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             meditate.meditate(length: 600)
             didHandle = true
             break
-        case "$com.learning.trent.Meditate.FifteenMinutes":
+        case "com.learning.trent.Meditate.FifteenMinutes":
             meditate.meditate(length: 900)
             didHandle = true
             break

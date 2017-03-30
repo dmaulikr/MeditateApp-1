@@ -48,6 +48,7 @@ class ViewController: UIViewController {
     
     func updateTimer() {
         if count >= 0 {
+            print("hey")
             if count == 0 {
                 timerLabel.text = "00:00"
                 endSound.play()
