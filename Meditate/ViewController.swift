@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     }
     
     //Function that plays the sounds at the proper times
-    func meditate(length: UInt32) {
+    public func meditate(length: UInt32) {
         count = Int(length)
         beginSound.play()
         //timerLabel.text = "\(length / 60):\(length % 60)0"

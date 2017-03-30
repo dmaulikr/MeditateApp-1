@@ -12,10 +12,34 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //Create an instance of the view controller to run the meditate function
+    //You probably aren'r supposed to do this
+    var meditate = ViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        var performAdditionalHandling = true
+        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem]
+            as? UIApplicationShortcutItem {
+            switch(shortcutItem.type) {
+            case "com.learning.trent.Meditate.OneMinute":
+                meditate.meditate(length: 60)
+                break
+            case "com.learning.trent.Meditate.FiveMinutes":
+                meditate.meditate(length: 300)
+                break
+            case "com.learning.trent.Meditate.TenMinutes":
+                meditate.meditate(length: 600)
+                break
+            case "com.learning.trent.Meditate.FifteenMinutes":
+                meditate.meditate(length: 900)
+                break
+            default: break
+            }
+            performAdditionalHandling = false
+        }
+        return performAdditionalHandling
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -38,6 +62,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ application: UIApplication,
+                     performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+        var didHandle: Bool = false
+        print(shortcutItem.type)
+        switch(shortcutItem.type) {
+        case "com.learning.trent.Meditate.OneMinute":
+            meditate.meditate(length: 60)
+            didHandle = true
+            break
+        case "com.learning.trent.Meditate.FiveMinutes":
+            meditate.meditate(length: 300)
+            didHandle = true
+            break
+        case "com.learning.trent.Meditate.TenMinutes":
+            meditate.meditate(length: 600)
+            didHandle = true
+            break
+        case "$com.learning.trent.Meditate.FifteenMinutes":
+            meditate.meditate(length: 900)
+            didHandle = true
+            break
+        default:
+            didHandle = false
+        }
+        completionHandler(didHandle)
     }
     
 }
