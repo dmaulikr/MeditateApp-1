@@ -73,7 +73,7 @@ class ViewController: UIViewController {
     public func meditate(length: UInt32) {
         count = Int(length)
         beginSound.play()
-        //timerLabel.text = "\(length / 60):\(length % 60)0"
+        timerLabel.text = "\(length / 60):\(length % 60)0"
         updateTimer()
     }
 }
